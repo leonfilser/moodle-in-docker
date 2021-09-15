@@ -1,0 +1,26 @@
+services:
+ moodle:
+    build: .
+    image: moodle:latest
+    restart: unless-stopped
+    container_name: moodle
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./moodledata:/var/www/moodledata
+      - ./moodle:/var/www/moodle
+      #- ./.htaccess:/var/www/moodle/.htaccess
+    environment:
+      - VERSION=MOODLE_310_STABLE
+      - MOODLELANG=de
+      - WWWROOT=https://localhost
+      - DBTYPE=mariadb
+      - DBHOST=localhost
+      - DBNAME=moodle
+      - DBUSER=moodle
+      - DBPASS=password
+      - FULLNAME=Leons Super Cool Moodle
+      - SHORTNAME=Leons Moodle
+      - ADMINPASS=admin
+      - ADMINMAIL=me@localhost
+      - USESSL=false
