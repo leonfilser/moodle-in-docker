@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag leonfilser/papermc:latest
+      run: docker build . --file Dockerfile --tag leonfilser/moodle:latest
     
     - name: Login to DockerHub
       env:
@@ -24,4 +24,4 @@ jobs:
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       
     - name: Publish the Image
-      run: docker push leonfilser/papermc:latest
+      run: docker push leonfilser/moodle:latest
