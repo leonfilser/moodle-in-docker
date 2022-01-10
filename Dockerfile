@@ -60,4 +60,4 @@ RUN	cd /etc/apache2/sites-available \
 
 COPY	./entrypoint.sh /usr/local/bin
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
