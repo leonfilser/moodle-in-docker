@@ -58,6 +58,6 @@ RUN	cd /etc/apache2/sites-available \
 	&& rm 000-default.conf default-ssl.conf \
 	&& rm -r /var/www/html
 
-ADD	./entrypoint.sh /usr/local/bin/
+COPY	./entrypoint.sh /usr/local/bin
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
